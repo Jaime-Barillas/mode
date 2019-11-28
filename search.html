@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Noir Restaurant</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script src="./dropdown.js"></script>
+    <script src="./lib.js"></script>
+    <script src="./search.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+    <nav class="navbar is-link">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="./">
+                <img src="./assets/logo.png"/>
+            </a>
+            
+            <div id="nav-toggle" class="navbar-burger" data-target="nav-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div id="nav-menu" class="navbar-menu">
+            <div class="navbar-start has-text-centered">
+                <a class="navbar-item" href="./search.html">
+                    Search
+                </a>
+                <a class="navbar-item" href="./favourites.html">
+                    Favourites
+                </a>
+            </div>
+        </div>
+    </nav>
+    <section class="section has-text-centered">
+        <label for="name">Name: </label>
+        <input id="name" type="text" placeholder="Name" oninput="search(this.value)"/>
+        <br/>
+        <br/>
+        <div id="app" class="columns is-multiline"></div>
+    </section>
+</body>
+</html>
