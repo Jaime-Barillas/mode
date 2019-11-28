@@ -12,12 +12,12 @@ function makeCard(beer) {
     <div class="media">
       <div class="media-left">
         <figure class="image is-48x48">
-          <img src="${beer.image_url}" alt="Placeholder image">
+          <img src="${beer.image_url}" style="height: 48px;" alt="Placeholder image">
         </figure>
       </div>
       <div class="media-content">
         <p class="title is-4">${beer.name}</p>
-        <p class="subtitle is-6">@johnsmith</p>
+        <p class="subtitle is-6">${beer.tagline}</p>
       </div>
     </div>
   </div>
