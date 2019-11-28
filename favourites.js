@@ -12,7 +12,8 @@ function main() {
 
     for (id of favs) {
         ajax('/' + id, function() {
-            beers.push(this.responseText);
+            let len = this.responseText.length;
+            beers.push(this.responseText.substring(1, len));
             render();
         });
     }
