@@ -12,7 +12,7 @@ function main() {
 
     for (id of favs) {
         ajax('/' + id, function() {
-            beers.push();
+            beers.push(this.responseText);
             render();
         });
     }
