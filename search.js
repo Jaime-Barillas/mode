@@ -47,7 +47,7 @@ function main() {
 function search(name) {
     beers = allbeers.filter(beer => beer.name
                                         .toLowerCase()
-                                        .startsWith(name.toLowerCase()));
+                                        .includes(name.toLowerCase()));
     let app = document.getElementById('app');
     app.innerHTML = '';
     insertCards(app, beers);
