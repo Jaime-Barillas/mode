@@ -5,8 +5,41 @@ function render() {
     insertBeerCardss(app, beers);
 }
 
+function createBeerCard2(beer) {
+    let card = document.createElement('div');
+    card.classList.add('card');
+    card.classList.add('column');
+    card.classList.add('is-one-quarter');
+    card.innerHTML = `
+  <div class="card-image">
+    <figure>
+      <img  style="height: 196px;" src="${beer.image_url}" alt="Placeholder image">
+    </figure>
+  </div>
+  <div class="card-content" style="min-height: 506px;">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4">${beer.name}</p>
+        <p class="subtitle is-6">First Brewed: ${beer.first_brewed}</p>
+      </div>
+    </div>
+
+    <div class="content">
+      ${beer.description}
+    </div>
+  </div>
+  <footer class="card-footer">
+    <button id="${beer.id}" class="card-footer-item" onclick="unfavourite(${beer.id})">
+      Unfavourite
+    </button>
+  </footer>
+    `;
+
+    return card;
+}
+
 function insertBeerCardss(here, beers) {
-    let cards = beers.map(b => createBeerCard(JSON.parse(b)));
+    let cards = beers.map(b => createBeerCard2(JSON.parse(b)));
 
     for (card of cards) {
         here.append(card);
