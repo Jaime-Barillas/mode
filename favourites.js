@@ -2,7 +2,15 @@ let beers = [];
 
 function render() {
     let app = document.getElementById('app');
-    insertBeerCards(app, beers);
+    insertBeerCardss(app, beers);
+}
+
+function insertBeerCardss(here, beers) {
+    let cards = beers.map(b => createBeerCard(JSON.parse(b)));
+
+    for (card of cards) {
+        here.append(card);
+    }
 }
 
 function main() {
@@ -14,7 +22,7 @@ function main() {
         ajax('/' + id, function() {
             let len = this.responseText.length;
             //beers.push(this.responseText.substring(1, len - 1));
-            beers.push(JSON.stringify(JSON.pars(this.responseText)[0]));
+            beers.push(JSON.stringify(JSON.parse(this.responseText)[0]));
             render();
         });
     }
